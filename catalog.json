@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "updated": "2026-11-19",
+  "models": {
+    "tts-kk": {
+      "version": 1,
+      "kind": "tts",
+      "release": "tts-kk-v1",
+      "name": {
+        "en": "Kazakh voice",
+        "kk": "Қазақша дауыс"
+      },
+      "license": "CC-BY-4.0",
+      "attribution": "Kazakh voice: Piper kk_KZ-issai-high, trained on the KazakhTTS2 corpus by ISSAI (Nazarbayev University). Licensed under CC BY 4.0.",
+      "minPlugin": "0.0.1",
+      "ramMb": 400,
+      "files": [
+        {
+          "name": "voice.onnx",
+          "size": 127864258,
+          "sha256": "4dee767c893e8535da821447d12cb030e3569e11254c14030a1da5d8b2222c16"
+        },
+        {
+          "name": "voice.onnx.json",
+          "size": 5990,
+          "sha256": "f270341357a31da4b6d21570d65011477b0cb33c7f3c73aa179215cae5c4a95f"
+        }
+      ],
+      "mirrors": [
+        "https://github.com/eq-devs/qazvoice-models/releases/download/{release}/{file}"
+      ]
+    },
+    "stt-kk": {
+      "version": 1,
+      "kind": "stt",
+      "release": "stt-kk-v1",
+      "name": {
+        "en": "Kazakh speech recognition",
+        "kk": "Қазақша сөйлеуді тану"
+      },
+      "license": "CC-BY-4.0 AND MIT",
+      "attribution": "Speech recognition: NVIDIA stt_kk_ru_fastconformer_hybrid_large (CC BY 4.0), converted to ONNX and quantized. Voice activity detection: Silero VAD (MIT).",
+      "minPlugin": "0.0.1",
+      "ramMb": 600,
+      "files": [
+        {
+          "name": "encoder.onnx",
+          "size": 171863370,
+          "sha256": "edfb1f3d8d56e315f303d53008797c8fb03f790a025614efaff7bfece7e0b84e"
+        },
+        {
+          "name": "decoder_joint.onnx",
+          "size": 21350212,
+          "sha256": "157f9b5aee5e13dfae595f5860d4c9833b94dec0139ee592766e4f0c11b1c99b"
+        },
+        {
+          "name": "tokens.txt",
+          "size": 15366,
+          "sha256": "d296e1a77da9cfd3934dff6bd496b4e5f03850c18a9c528ada96fc749b2b3599"
+        },
+        {
+          "name": "model.json",
+          "size": 266,
+          "sha256": "6cb3ca688bb3422e0365ff19f84ce608c8bbdd168ed27faa3a5af6f8673ca138"
+        },
+        {
+          "name": "silero_vad.onnx",
+          "size": 2327524,
+          "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+        }
+      ],
+      "mirrors": [
+        "https://github.com/eq-devs/qazvoice-models/releases/download/{release}/{file}"
+      ]
+    },
+    "punct-kk": {
+      "version": 1,
+      "kind": "punct",
+      "release": "punct-kk-v1",
+      "name": {
+        "en": "Punctuation",
+        "kk": "Тыныс белгілері"
+      },
+      "license": "Apache-2.0",
+      "attribution": "Punctuation: 1-800-BAD-CODE/xlm-roberta_punctuation_fullstop_truecase (Apache-2.0), vocabulary pruned and quantized.",
+      "minPlugin": "0.0.1",
+      "ramMb": 300,
+      "files": [
+        {
+          "name": "model.onnx",
+          "size": 113264068,
+          "sha256": "c996a14eb04294d79ba61763258da43a940876f834293d1109c90e4053c51e46"
+        },
+        {
+          "name": "sp.model",
+          "size": 994647,
+          "sha256": "74c0a695cc04174f0c907544706dd5e06c57c4b6dcd788e1e75f6990f275d264"
+        },
+        {
+          "name": "config.yaml",
+          "size": 531,
+          "sha256": "fb27ec0ddc253655cd89aee3de9976a4c6b5d1b3a6a6e8fdcb511f7a522dde00"
+        }
+      ],
+      "mirrors": [
+        "https://github.com/eq-devs/qazvoice-models/releases/download/{release}/{file}"
+      ]
+    }
+  }
+}
