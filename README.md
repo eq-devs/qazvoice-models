@@ -6,7 +6,9 @@ demand; nothing here needs to be fetched by hand.
 
 Each model is one GitHub Release. Every release contains the model files, its
 `LICENSE` and an `ATTRIBUTION.md`. The `catalog` release holds `catalog.json`, the
-list the plugin reads (sizes and SHA-256 of every file).
+list the plugin reads (sizes and SHA-256 of every file), and `catalog.json.sig`, its
+Ed25519 signature. The plugin ignores a catalog whose signature does not match the key
+built into it, and a downloaded catalog can only add newer model versions.
 
 | id | release | size | contents | license |
 |---|---|---|---|---|

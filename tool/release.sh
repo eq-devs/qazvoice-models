@@ -7,7 +7,10 @@ REPO=eq-devs/qazvoice-models
 if [ "${1:-}" = catalog ]; then
   gh release view catalog -R $REPO >/dev/null 2>&1 || \
     gh release create catalog -R $REPO --title "Model catalog" --notes "catalog.json read by the qazvoice plugin. Updated whenever a model release is added." --latest=false
-  gh release upload catalog catalog.json -R $REPO --clobber
+  # The plugin only trusts a catalog signed with its built-in Ed25519 key.
+  openssl pkeyutl -sign -inkey "${CATALOG_KEY:-$HOME/Desktop/eq/qazstt/signing/qazvoice-catalog-ed25519.pem}" \
+    -rawin -in catalog.json | xxd -p -c 256 | tr -d '\n' > catalog.json.sig
+  gh release upload catalog catalog.json catalog.json.sig -R $REPO --clobber
   exit 0
 fi
 ID=$1; SRC=$2
