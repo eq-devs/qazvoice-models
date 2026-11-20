@@ -12,9 +12,9 @@ built into it, and a downloaded catalog can only add newer model versions.
 
 | id | release | size | contents | license |
 |---|---|---|---|---|
-| `tts-kk` | [`tts-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/tts-kk-v1) | 128 MB | Piper `kk_KZ-issai-high` voice, 6 speakers, 22 050 Hz | CC BY 4.0 (ISSAI) |
-| `stt-kk` | [`stt-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/stt-kk-v1) | 196 MB | NVIDIA FastConformer kk-ru transducer (int8 ONNX) + Silero VAD | CC BY 4.0 + MIT |
-| `punct-kk` | [`punct-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/punct-kk-v1) | 114 MB | XLM-R punctuation + true-casing, pruned (optional) | Apache-2.0 |
+| `tts-kk` | [`tts-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/tts-kk-v1) | 128 MB (119 MB as .zst) | Piper `kk_KZ-issai-high` voice, 6 speakers, 22 050 Hz | CC BY 4.0 (ISSAI) |
+| `stt-kk` | [`stt-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/stt-kk-v1) | 196 MB (153 MB as .zst) | NVIDIA FastConformer kk-ru transducer (int8 ONNX) + Silero VAD | CC BY 4.0 + MIT |
+| `punct-kk` | [`punct-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/punct-kk-v1) | 114 MB (75 MB as .zst) | XLM-R punctuation + true-casing, pruned (optional) | Apache-2.0 |
 
 Attribution texts for your app's licenses screen are in [`attribution/`](attribution)
 and are also returned by `QazVoice.attributions` in the plugin.
@@ -35,13 +35,19 @@ and are also returned by `QazVoice.attributions` in the plugin.
 }
 ```
 
+Large files also have a zstd copy (`<name>.zst`, `zstd -19`) described by a `zst`
+entry (`size`, `sha256`). Plugin 0.0.3+ downloads that copy, verifies it, unpacks it in
+the background and verifies the result against the original `sha256`. Older plugins
+ignore the field and download the original files, which stay in every release.
+
 Mirror URLs are templates with `{id}`, `{version}`, `{release}` and `{file}`. Apps can
 add their own mirrors (for example a company server) with `QazVoice.init(mirrors: …)`.
 
 ## Publishing a new model version
 
-1. Put the files in a directory, bump `version` and `release` for that model in
-   `catalog.json`, fill in `size` / `sha256` (`tool/release.sh` prints them).
+1. Put the files in a directory (plus `zstd -19 <file>` copies of the large ones), bump
+   `version` and `release` for that model in `catalog.json`, fill in `size` / `sha256`
+   (and the `zst` entries).
 2. `tool/release.sh <id> <dir>` creates the release with the files, `LICENSE` and
    `ATTRIBUTION.md`.
 3. `tool/release.sh catalog` re-uploads `catalog.json`.

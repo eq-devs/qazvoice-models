@@ -31,6 +31,14 @@ for f in m["files"]:
     if size != f["size"] or h.hexdigest() != f["sha256"]:
         sys.exit(f"{f['name']}: catalog says {f['size']} {f['sha256']}, file is {size} {h.hexdigest()}")
     os.symlink(os.path.realpath(p), os.path.join(stage, f["name"]))
+    if "zst" in f:
+        z = p + ".zst"
+        if not os.path.exists(z):
+            sys.exit(f"{f['name']}: catalog lists a .zst copy; create it with `zstd -19 {p}`")
+        zh = hashlib.sha256(open(z, "rb").read()).hexdigest()
+        if os.path.getsize(z) != f["zst"]["size"] or zh != f["zst"]["sha256"]:
+            sys.exit(f"{f['name']}.zst: catalog and file differ")
+        os.symlink(os.path.realpath(z), os.path.join(stage, f["name"] + ".zst"))
 PY
 case "$LIC" in
   CC-BY-4.0*) cp licenses/CC-BY-4.0.txt "$STAGE/LICENSE" ;;

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "models": {
     "tts-kk": {
       "version": 1,
@@ -18,7 +18,11 @@
         {
           "name": "voice.onnx",
           "size": 127864258,
-          "sha256": "4dee767c893e8535da821447d12cb030e3569e11254c14030a1da5d8b2222c16"
+          "sha256": "4dee767c893e8535da821447d12cb030e3569e11254c14030a1da5d8b2222c16",
+          "zst": {
+            "size": 118819795,
+            "sha256": "2b08f3704d7a877fe9760c9b5ecf0a9708485609a5e86a17499aed1ea2da3898"
+          }
         },
         {
           "name": "voice.onnx.json",
@@ -46,12 +50,20 @@
         {
           "name": "encoder.onnx",
           "size": 171863370,
-          "sha256": "edfb1f3d8d56e315f303d53008797c8fb03f790a025614efaff7bfece7e0b84e"
+          "sha256": "edfb1f3d8d56e315f303d53008797c8fb03f790a025614efaff7bfece7e0b84e",
+          "zst": {
+            "size": 131918928,
+            "sha256": "42310b42ff621828a5e9e89a66ef93e6241b76a3708b14aa16cb808227d0efe9"
+          }
         },
         {
           "name": "decoder_joint.onnx",
           "size": 21350212,
-          "sha256": "157f9b5aee5e13dfae595f5860d4c9833b94dec0139ee592766e4f0c11b1c99b"
+          "sha256": "157f9b5aee5e13dfae595f5860d4c9833b94dec0139ee592766e4f0c11b1c99b",
+          "zst": {
+            "size": 19640206,
+            "sha256": "034104c76fa325877c628ed6af08f13b5681a88a4dea9b052f57788d63a703ea"
+          }
         },
         {
           "name": "tokens.txt",
@@ -66,7 +78,11 @@
         {
           "name": "silero_vad.onnx",
           "size": 2327524,
-          "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f"
+          "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+          "zst": {
+            "size": 1814725,
+            "sha256": "3556b39550a4fb7ea81f4d4daebc280aee79a3ef99b76830d6ce37df467969b2"
+          }
         }
       ],
       "mirrors": [
@@ -89,12 +105,20 @@
         {
           "name": "model.onnx",
           "size": 113264068,
-          "sha256": "c996a14eb04294d79ba61763258da43a940876f834293d1109c90e4053c51e46"
+          "sha256": "c996a14eb04294d79ba61763258da43a940876f834293d1109c90e4053c51e46",
+          "zst": {
+            "size": 74969315,
+            "sha256": "6070b04e6c7e3d2fdbf61f22ff27c7921c0df122d01fbe6812c3da4cd56157fa"
+          }
         },
         {
           "name": "sp.model",
           "size": 994647,
-          "sha256": "74c0a695cc04174f0c907544706dd5e06c57c4b6dcd788e1e75f6990f275d264"
+          "sha256": "74c0a695cc04174f0c907544706dd5e06c57c4b6dcd788e1e75f6990f275d264",
+          "zst": {
+            "size": 373612,
+            "sha256": "d9520be84d3903251333373c7e11db184465d8622629b5c5c1dd2f94b4724e5d"
+          }
         },
         {
           "name": "config.yaml",
