@@ -43,8 +43,9 @@ PY
 case "$LIC" in
   CC-BY-4.0*) cp licenses/CC-BY-4.0.txt "$STAGE/LICENSE" ;;
   Apache-2.0) cp licenses/Apache-2.0.txt "$STAGE/LICENSE" ;;
+  MIT) cp licenses/MIT-gigaam.txt "$STAGE/LICENSE" ;;
 esac
-case "$LIC" in *MIT*) cp licenses/MIT-silero-vad.txt "$STAGE/LICENSE-silero-vad" ;; esac
+case "$ID" in stt-*) cp licenses/MIT-silero-vad.txt "$STAGE/LICENSE-silero-vad" ;; esac
 cp "attribution/$ID.md" "$STAGE/ATTRIBUTION.md"
 NOTES="$(cat "attribution/$ID.md")"
 gh release view "$REL" -R $REPO >/dev/null 2>&1 || gh release create "$REL" -R $REPO --title "$REL" --notes "$NOTES" --latest=false

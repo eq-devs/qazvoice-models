@@ -14,6 +14,7 @@ built into it, and a downloaded catalog can only add newer model versions.
 |---|---|---|---|---|
 | `tts-kk` | [`tts-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/tts-kk-v1) | 128 MB (119 MB as .zst) | Piper `kk_KZ-issai-high` voice, 6 speakers, 22 050 Hz | CC BY 4.0 (ISSAI) |
 | `stt-kk` | [`stt-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/stt-kk-v1) | 196 MB (153 MB as .zst) | NVIDIA FastConformer kk-ru transducer (int8 ONNX) + Silero VAD | CC BY 4.0 + MIT |
+| `stt-kk-giga` | [`stt-kk-giga-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/stt-kk-giga-v1) | 322 MB (253 MB as .zst) | GigaAM Multilingual CTC (int8) + Silero VAD, high accuracy (optional, plugin 0.0.4+) | MIT |
 | `punct-kk` | [`punct-kk-v1`](https://github.com/eq-devs/qazvoice-models/releases/tag/punct-kk-v1) | 114 MB (75 MB as .zst) | XLM-R punctuation + true-casing, pruned (optional) | Apache-2.0 |
 
 Attribution texts for your app's licenses screen are in [`attribution/`](attribution)

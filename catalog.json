@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-20",
+  "updated": "2026-11-20b",
   "models": {
     "tts-kk": {
       "version": 1,
@@ -11,7 +11,7 @@
         "kk": "Қазақша дауыс"
       },
       "license": "CC-BY-4.0",
-      "attribution": "Kazakh voice: Piper kk_KZ-issai-high, trained on the KazakhTTS2 corpus by ISSAI (Nazarbayev University). Licensed under CC BY 4.0.",
+      "attribution": "Kazakh voice: Piper kk_KZ-issai-high, trained on data from Mussakhojayeva, S., Janaliyeva, A., Mirzakhmetov, A., Khassanov, Y., Varol, H.A. (2021) \"KazakhTTS: An Open-Source Kazakh Text-to-Speech Synthesis Dataset\", Proc. Interspeech 2021, ISSAI, Nazarbayev University, Kazakhstan. CC BY 4.0.",
       "minPlugin": "0.0.1",
       "ramMb": 400,
       "files": [
@@ -124,6 +124,52 @@
           "name": "config.yaml",
           "size": 531,
           "sha256": "fb27ec0ddc253655cd89aee3de9976a4c6b5d1b3a6a6e8fdcb511f7a522dde00"
+        }
+      ],
+      "mirrors": [
+        "https://github.com/eq-devs/qazvoice-models/releases/download/{release}/{file}"
+      ]
+    },
+    "stt-kk-giga": {
+      "version": 1,
+      "kind": "stt",
+      "release": "stt-kk-giga-v1",
+      "name": {
+        "en": "Kazakh speech recognition (high accuracy)",
+        "kk": "Қазақша сөйлеуді тану (жоғары дәлдік)"
+      },
+      "license": "MIT",
+      "attribution": "Speech recognition: GigaAM Multilingual by Sber AI (MIT), quantized to int8. Voice activity detection: Silero VAD (MIT).",
+      "minPlugin": "0.0.4",
+      "ramMb": 500,
+      "files": [
+        {
+          "name": "model.onnx",
+          "size": 319455599,
+          "sha256": "07a0c051d38384ccd9c113a36293bbb716a7d342a45ff4aab9ac182258b785c5",
+          "zst": {
+            "size": 251159340,
+            "sha256": "977cafffa82f13d584a8ed4d142b7194da05e43dd459aab9ad58bdc6ecd05bd6"
+          }
+        },
+        {
+          "name": "model.json",
+          "size": 554,
+          "sha256": "d8d92d9646383b088be39a0123c8d42b48a56f529a125e081528288b268d3cba"
+        },
+        {
+          "name": "tokens.txt",
+          "size": 393,
+          "sha256": "4d130287892e1099fedfb3f93c4b4cf8a263151158801680b28977d1be4133f4"
+        },
+        {
+          "name": "silero_vad.onnx",
+          "size": 2327524,
+          "sha256": "2623a2953f6ff3d2c1e61740c6cdb7168133479b267dfef114a4a3cc5bdd788f",
+          "zst": {
+            "size": 1814725,
+            "sha256": "3556b39550a4fb7ea81f4d4daebc280aee79a3ef99b76830d6ce37df467969b2"
+          }
         }
       ],
       "mirrors": [
